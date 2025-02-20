@@ -23,7 +23,7 @@ const App = () => {
     "Every day may not be good, but there is something good in every day.",
     "Small steps in the right direction can turn out to be the biggest step of your life.",
   ];
-  const [quote, setQuote] = useState("");
+  const [quote, setQuote] = useState(quotes[0]);
   function GenerateQuote() {
     let index = Math.floor(Math.random() * quotes.length);
     setQuote(quotes[index]);
