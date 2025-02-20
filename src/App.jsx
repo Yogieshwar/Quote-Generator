@@ -28,6 +28,11 @@ const App = () => {
     let index = Math.floor(Math.random() * quotes.length);
     setQuote(quotes[index]);
   }
+  function TweetQuote() {
+    const tweetText = encodeURIComponent(quote);
+    const tweetUrl = `https://twitter.com/intent/tweet?text=${tweetText}`;
+    window.open(tweetUrl, "_blank");
+  }
   return (
     <>
       <div className="d-flex justify-content-center align-items-center vh-100 bg-dark text-light">
@@ -37,6 +42,9 @@ const App = () => {
             <p className="fs-5 fst-italic">{quote}</p>
             <button className="btn btn-warning mt-3 fw-bold" onClick={GenerateQuote} >
               Generate Quote
+            </button>
+            <button className="btn btn-info mt-3 mx-2" onClick={TweetQuote}>
+                Tweet Quote
             </button>
           </div>
         </div>
